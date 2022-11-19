@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{page_title}}
+{% endblock title %}
+
+{% block contents %}
+<br />
+<center><a class="navbar-brand badge text-wrap font-monospace" style='font-size:14px;text-transform:uppercase;color:#fff;background-color: green;'>CSV bentuk tabel</a></center>
+<br />
+<table class="table table-bordered">
+    <thead class="table-primary">
+        <tr>
+            <th>Id CSV</th>
+            <th>Name CSV</th>
+            <th>Price CSV</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for i in lihatCSV%}
+        <tr>
+            <td>{{i.idcsv}}</th>
+            <td>{{i.nama}}</td>
+            <td>{{i.harga}}</td>
+        </tr>
+        {% endfor %}
+    </tbody> 
+</table>
+{% endblock contents %}

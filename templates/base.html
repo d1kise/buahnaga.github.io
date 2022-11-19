@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type='text/css' href='{% static 'bootstrap5/css/bootstrap.min.css' %}' />
+    
+    <link rel="stylesheet" href='{% static 'fontawesome/css/all.css' %}'/>
+    <script src='{% static 'js/jquery.min.3.1.js' %}'></script>
+    <title>
+        {% block title %}
+        
+        {% endblock title %}
+    </title>
+  </head>
+  <body>
+    <div class='container font-monospace'>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand badge bg-primary text-wrap font-monospace" style='font-size:18px;text-transform:uppercase;color:#fff;'>UTS-1</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="{% url 'showfile:index' %}">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'showfile:csv' %}">CSV</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'showfile:json' %}">JSON</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'showfile:xml' %}">XML</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+        {% block contents %}
+        
+        {% endblock contents %}
+    </div>
+    <script src='{% static 'bootstrap5/js/bootstrap.bundle.min.js'%}'></script>
+  </body>
+</html>
