@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{page_title}}
+
+{% endblock title %}
+
+{% block contents %}
+<table class="table table-bordered">
+    <thead class="table-secondary">
+        <tr>
+            <th>ID</th>
+            <th>BRAND</th>
+            <th>MODEL</th>
+            <th>PRICE</th>
+            <th>ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for car in cars %}  
+        <tr>
+            <td>{{ car.eid }}</td>  
+            <td>{{ car.ebrand }}</td>  
+            <td>{{ car.emodel }}</td>  
+            <td>{{ car.eprice }}</td>  
+            <td>  
+                <a href="/edit/{{ car.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+                <a href="/delete/{{ car.id }}">Delete</a>  
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody> 
+</table>  
+<br>  
+<br>  
+<center><a href="/input" class="btn btn-primary">Add New Record</a></center>  
+
+{% endblock contents %}

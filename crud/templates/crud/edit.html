@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{page_title}}
+
+{% endblock title %}
+
+{% block contents %}
+
+<body>  
+<form method="POST" class="post-form" action="/update/{{cars.id}}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Update Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">ID Cars:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ cars.eid }}"/>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Brand Cars:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="ebrand" id="id_ebrand" required maxlength="100" value="{{ cars.ebrand }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Model Cars:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="emodel" id="id_emodel" required maxlength="254" value="{{ cars.emodel }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Price Cars:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="eprice" id="id_eprice" required maxlength="15" value="{{ cars.eprice }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Update</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+
+{% endblock contents %}
